@@ -7,7 +7,30 @@
     {
       "Id": 2,
       "UserName": "Natalia"
+    },
+    {
+      "Id": 3,
+      "UserName": "Maria"
     }
   ],
-  "ToDos": []
+  "ToDos": [
+    {
+      "Id": 1,
+      "Owner": {
+        "Id": 2,
+        "UserName": "Natalia"
+      },
+      "Title": "buy milk",
+      "IsCompleted": false
+    },
+    {
+      "Id": 2,
+      "Owner": {
+        "Id": 3,
+        "UserName": "Maria"
+      },
+      "Title": "drink",
+      "IsCompleted": false
+    }
+  ]
 }
