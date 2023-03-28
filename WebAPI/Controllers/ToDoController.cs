@@ -30,5 +30,66 @@ public class ToDosController : ControllerBase
             return StatusCode(500, e.Message);
         }
     }
+    
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<ToDo>>> GetAsync([FromQuery] string? userName, [FromQuery] int? userId,
+        [FromQuery] bool? completedStatus, [FromQuery] string? titleContains)
+    {
+        try
+        {
+            SearchToDoParametersDTO parameters = new(userName, userId, completedStatus, titleContains);
+            IEnumerable<ToDo> toDos = await toDoLogic.GetAsync(parameters);
+            return Ok(toDos);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 
+    [HttpPatch]
+    public async Task<ActionResult> UpdateAsync([FromBody] ToDoUpdateDTO dto)
+    {
+        try
+        {
+            await toDoLogic.UpdateAsync(dto);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult> DeleteAsync([FromRoute] int id)
+    {
+        try
+        {
+            await toDoLogic.DeleteAsync(id);
+            return Ok();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+    
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<GetToDoDTO>> GetById([FromRoute] int id)
+    {
+        try
+        {
+            GetToDoDTO result = await toDoLogic.GetByIdAsync(id);
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
 }
