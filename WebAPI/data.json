@@ -11,6 +11,10 @@
     {
       "Id": 3,
       "UserName": "Maria"
+    },
+    {
+      "Id": 4,
+      "UserName": "Simon"
     }
   ],
   "ToDos": [
@@ -30,6 +34,60 @@
         "UserName": "Jakub"
       },
       "Title": "call home",
+      "IsCompleted": false
+    },
+    {
+      "Id": 4,
+      "Owner": {
+        "Id": 4,
+        "UserName": "Simon"
+      },
+      "Title": "milk a cow",
+      "IsCompleted": false
+    },
+    {
+      "Id": 5,
+      "Owner": {
+        "Id": 3,
+        "UserName": "Maria"
+      },
+      "Title": "buy",
+      "IsCompleted": false
+    },
+    {
+      "Id": 6,
+      "Owner": {
+        "Id": 2,
+        "UserName": "Natalia"
+      },
+      "Title": "sleep",
+      "IsCompleted": false
+    },
+    {
+      "Id": 7,
+      "Owner": {
+        "Id": 2,
+        "UserName": "Natalia"
+      },
+      "Title": "get better",
+      "IsCompleted": false
+    },
+    {
+      "Id": 8,
+      "Owner": {
+        "Id": 1,
+        "UserName": "Jakub"
+      },
+      "Title": "get a job",
+      "IsCompleted": false
+    },
+    {
+      "Id": 9,
+      "Owner": {
+        "Id": 4,
+        "UserName": "Simon"
+      },
+      "Title": "go to poland",
       "IsCompleted": false
     }
   ]
